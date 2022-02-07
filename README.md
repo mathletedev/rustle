@@ -1,2 +1,3 @@
 # rustle
-A Rust implementation of the classic Wordle game
+
+> A Rust implementation of the classic Wordle game

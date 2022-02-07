@@ -1,0 +1,9 @@
+[package]
+name = "rustle"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+colored = "2.0.0"
+rand = "0.8.4"
+dirs = "1.0.4"
