@@ -15,12 +15,12 @@ fn main() {
 
 	println!(
 		"\n  -----------------\n |   {} {} {} {} {} {}   |\n  -----------------\n",
-		format!("R").bold().red(),
-		format!("U").bold().yellow(),
-		format!("S").bold().green(),
-		format!("T").bold().cyan(),
-		format!("L").bold().blue(),
-		format!("E").bold().purple()
+		"R".bold().red(),
+		"U".bold().yellow(),
+		"S".bold().green(),
+		"T".bold().cyan(),
+		"L".bold().blue(),
+		"E".bold().purple()
 	);
 
 	let target = BufReader::new(if Path::new("src/lib/wordlist.txt").exists() {
@@ -73,16 +73,16 @@ fn main() {
 
 		for (i, c) in guess.chars().enumerate() {
 			if target.chars().nth(i) == Some(c) {
-				print!("{}", format!("{}", c).bold().green());
+				print!("{}", c.to_string().bold().green());
 				continue;
 			}
 
 			if target.find(c).is_some() {
-				print!("{}", format!("{}", c).bold().yellow());
+				print!("{}", c.to_string().bold().yellow());
 				continue;
 			}
 
-			print!("{}", format!("{}", c));
+			print!("{}", c);
 		}
 
 		stdout().flush().expect("Error flushing stdout");
@@ -92,7 +92,7 @@ fn main() {
 		if guess == target {
 			println!(
 				"\n You guessed the word in {} tr{}!",
-				format!("{}", tries).bold().blue(),
+				tries.to_string().bold().blue(),
 				if tries == 1 { "y" } else { "ies" }
 			);
 			break;
@@ -104,6 +104,6 @@ fn main() {
 	}
 
 	if tries > 6 {
-		println!(" The word was {}", format!("{}", target).bold().blue());
+		println!(" The word was {}", target.to_string().bold().blue());
 	}
 }
